@@ -150,8 +150,8 @@
         centerX = _bubbleView.frame.origin.x + _bubbleView.frame.size.width + self.config.messageIndicatorSize / 2 * 3;
     }
     _avatarImgv.frame = CGRectMake(0, 0, self.config.messageAvatarSize, self.config.messageAvatarSize);
-    if ([_delegate respondsToSelector:@selector(chatMessageAvatarImageView:message:)]){
-        [_delegate chatMessageAvatarImageView:_avatarImgv message:_message.message];
+    if ([_delegate respondsToSelector:@selector(chatMessageAvatar:from:)]){
+        [_delegate chatMessageAvatar:_avatarImgv from:_message.message.from];
     }
     
     _indicatorView.center = CGPointMake(centerX, _bubbleView.frame.origin.y + _bubbleView.frame.size.height / 2);
@@ -186,8 +186,8 @@
 
     _nameLabel.text = message.displayName;
     _nameLabel.hidden = message.message.messageType == eMessageTypeChat;
-    if ([_delegate respondsToSelector:@selector(chatMessageShowSenderNameWithMessage:)]){
-        _nameLabel.text = [_delegate chatMessageShowSenderNameWithMessage:_message];
+    if (_nameLabel.hidden&&[_delegate respondsToSelector:@selector(chatMessageName:)]){
+        _nameLabel.text = [_delegate chatMessageName:_message.message.from];
     }
 
     if (_message.sender) {

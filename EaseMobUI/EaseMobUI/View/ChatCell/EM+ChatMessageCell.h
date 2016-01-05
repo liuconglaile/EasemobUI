@@ -42,9 +42,21 @@
 
 @optional
 
-- (void)chatMessageAvatarImageView:(UIImageView *)imgv message:(EMMessage *)message;
+/**
+ *  用来设置用户头像
+ *
+ *  @param imgv     显示头像的UIImageView
+ *  @param userName 发送消息的环信账号:EMMessage->from
+ */
+- (void)chatMessageAvatar:(UIImageView *)imgv from:(NSString *)userName;
 
-- (NSString *)chatMessageShowSenderNameWithMessage:(EM_ChatMessageModel *)message;
+/**
+ *  通过Chatter来设置消息发送者的用户名 (单聊时不调用)
+ *
+ *  @param imgv     显示头像的UIImageView
+ *  @param userName 发送消息的环信账号:EMMessage->from
+ */
+- (NSString *)chatMessageName:(NSString *)userName;
 
 /**
  *  头像点击

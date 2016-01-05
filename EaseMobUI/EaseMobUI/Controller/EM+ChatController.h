@@ -103,11 +103,20 @@
 - (void)didExtendMenuSelectedWithUserInfo:(NSDictionary *)userInfo;
 
 /**
- *  设置用户头像
+ *  设置头像
  *
- *  @param imgv    头像的ImageView
- *  @param message 源消息
+ *  @param imgv     显示头像的UIImageView
+ *  @param userName 消息发送者的EaseMob用户名
  */
-- (void)chatMessageAvatarImageView:(UIImageView *)avatar orignMessage:(EMMessage *)message;
+- (void)loadAvatar:(UIImageView *)imgv user:(NSString *)userName;
+
+/**
+ *  加载消息发送者的用户名
+ *
+ *  @param userName 消息发送者的EaseMob用户名
+ *
+ *  @return 返回在群聊时需要显示的发送者名字
+ */
+- (NSString *)loadSenderNameBy:(NSString *)userName;
 
 @end

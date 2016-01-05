@@ -1065,9 +1065,15 @@ EMCDDeviceManagerDelegate>
     [audioSession setActive:YES error:nil];
 }
 
-- (void)chatMessageAvatarImageView:(UIImageView *)imgv message:(EMMessage *)message{
-    if ([_delegate respondsToSelector:@selector(chatMessageAvatarImageView:orignMessage:)])
-        [_delegate chatMessageAvatarImageView:imgv orignMessage:message];
+- (void)chatMessageAvatar:(UIImageView *)imgv from:(NSString *)userName{
+    if ([_delegate respondsToSelector:@selector(loadAvatar:user:)])
+        [_delegate loadAvatar:imgv user:userName];
+}
+
+- (NSString *)chatMessageName:(NSString *)userName{
+    if ([_delegate respondsToSelector:@selector(loadSenderNameBy:)])
+        return [_delegate loadSenderNameBy:userName];
+    return @"";
 }
 
 @end
