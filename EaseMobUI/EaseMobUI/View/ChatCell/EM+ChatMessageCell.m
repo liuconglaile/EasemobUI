@@ -149,9 +149,11 @@
         _tailView.center = CGPointMake(_bubbleView.frame.origin.x,_bubbleView.frame.origin.y + _config.bubbleCornerRadius + _tailView.frame.size.height / 2);
         centerX = _bubbleView.frame.origin.x + _bubbleView.frame.size.width + self.config.messageIndicatorSize / 2 * 3;
     }
+    NSString *chatter = self.message.message.groupSenderName;
+    chatter = [chatter length] > 0 ? chatter : self.message.message.from;
     _avatarImgv.frame = CGRectMake(0, 0, self.config.messageAvatarSize, self.config.messageAvatarSize);
     if ([_delegate respondsToSelector:@selector(chatMessageAvatar:from:)]){
-        [_delegate chatMessageAvatar:_avatarImgv from:_message.message.from];
+        [_delegate chatMessageAvatar:_avatarImgv from:chatter];
     }
     
     _indicatorView.center = CGPointMake(centerX, _bubbleView.frame.origin.y + _bubbleView.frame.size.height / 2);
@@ -159,8 +161,10 @@
 }
 
 - (void)avatarClicked:(id)sender{
+    NSString *chatter = self.message.message.groupSenderName;
+    chatter = [chatter length] > 0 ? chatter : self.message.message.from;
     if (_delegate && [_delegate respondsToSelector:@selector(chatMessageCell:didTapAvatarWithChatter:indexPath:)]) {
-        [_delegate chatMessageCell:self didTapAvatarWithChatter:self.message.message.from indexPath:self.indexPath];
+        [_delegate chatMessageCell:self didTapAvatarWithChatter:chatter indexPath:self.indexPath];
     }
 }
 
@@ -183,11 +187,12 @@
 
 - (void)setMessage:(EM_ChatMessageModel *)message{
     _message = message;
-
+    NSString *chatter = self.message.message.groupSenderName;
+    chatter = [chatter length] > 0 ? chatter : self.message.message.from;
     _nameLabel.text = message.displayName;
     _nameLabel.hidden = message.message.messageType == eMessageTypeChat;
     if (_nameLabel.hidden&&[_delegate respondsToSelector:@selector(chatMessageName:)]){
-        _nameLabel.text = [_delegate chatMessageName:_message.message.from];
+        _nameLabel.text = [_delegate chatMessageName:chatter];
     }
 
     if (_message.sender) {
