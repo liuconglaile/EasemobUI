@@ -319,7 +319,10 @@ EMCDDeviceManagerDelegate>
     if (!message.messageExtend.extendAttributes && self.delegate && [self.delegate respondsToSelector:@selector(extendForMessage:)]) {
         [self.delegate extendForMessage:message];
     }
-    message.message.ext = [message.messageExtend toDictionary];
+//    message.message.ext = [message.messageExtend toDictionary];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:message.message.ext];
+    [dict setValuesForKeysWithDictionary:[message.messageExtend toDictionary]];
+    message.message.ext = dict;
     [[EaseMob sharedInstance].chatManager asyncSendMessage:message.message progress:self];
 }
 
@@ -1065,14 +1068,14 @@ EMCDDeviceManagerDelegate>
     [audioSession setActive:YES error:nil];
 }
 
-- (void)chatMessageAvatar:(UIImageView *)imgv from:(NSString *)userName{
-    if ([_delegate respondsToSelector:@selector(loadAvatar:user:)])
-        [_delegate loadAvatar:imgv user:userName];
+- (void)chatMessageAvatar:(UIImageView *)imgv from:(EM_ChatMessageModel *)message{
+    if ([_delegate respondsToSelector:@selector(loadAvatar:message:)])
+        [_delegate loadAvatar:imgv message:message];
 }
 
-- (NSString *)chatMessageName:(NSString *)userName{
-    if ([_delegate respondsToSelector:@selector(loadSenderNameBy:)])
-        return [_delegate loadSenderNameBy:userName];
+- (NSString *)chatMessageName:(EM_ChatMessageModel *)message{
+    if ([_delegate respondsToSelector:@selector(loadSenderNameBymessage:)])
+        return [_delegate loadSenderNameBymessage:message];
     return @"";
 }
 
