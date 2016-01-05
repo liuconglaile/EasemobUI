@@ -62,6 +62,7 @@
     if (self) {
         _nameLabel = [[UILabel alloc]init];
         _nameLabel.textColor = [UIColor blackColor];
+        [_nameLabel setFont:[UIFont systemFontOfSize:14]];
         [self.contentView addSubview:_nameLabel];
         
         _avatarView = [[UIButton alloc]init];
@@ -186,14 +187,15 @@
 
 - (void)setMessage:(EM_ChatMessageModel *)message{
     _message = message;
-    _nameLabel.text = message.displayName;
+    //    _nameLabel.text = message.displayName;
     _nameLabel.hidden = message.message.messageType == eMessageTypeChat;
-    if (_nameLabel.hidden&&[_delegate respondsToSelector:@selector(chatMessageName:)]){
+    if (!_nameLabel.hidden&&[_delegate respondsToSelector:@selector(chatMessageName:)]){
         _nameLabel.text = [_delegate chatMessageName:_message];
     }
 
     if (_message.sender) {
-        _nameLabel.textAlignment = NSTextAlignmentRight;
+        [_nameLabel removeFromSuperview];
+        //        _nameLabel.textAlignment = NSTextAlignmentRight;
         _bubbleView.backgroundView.backgroundColor = [UIColor colorWithHexRGB:0xafa376];
         _tailView.text = kEMChatIconBubbleTailRight;
     }else{
@@ -205,10 +207,10 @@
     _tailView.textColor = _bubbleView.backgroundView.backgroundColor;
     _tailView.hidden = self.message.messageBody.messageBodyType == eMessageBodyType_Image || self.message.messageBody.messageBodyType == eMessageBodyType_Video;
     _bubbleView.message = _message;
-    
+
     _timeLabel.text = [EM_ChatDateUtils stringFormatterMessageDateFromTimeInterval:message.message.timestamp / 1000];
     _timeLabel.hidden = !_message.messageExtend.showTime;
-    
+
     if (_message.message.deliveryState == eMessageDeliveryState_Failure
         || _message.message.deliveryState == eMessageDeliveryState_Delivered) {
         if (_indicatorView.isAnimating) {

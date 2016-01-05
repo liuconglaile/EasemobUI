@@ -119,5 +119,11 @@
  */
 - (NSString *)loadSenderNameBymessage:(EM_ChatMessageModel *)message;
 
+/**
+ *  使用window跳转到查看图片/视频等页面时候失效  所以很暴力的将ViewController传过来了
+ *
+ *  @return 给baseCtrl用的
+ */
+- (UIViewController *)loadRootViewController;
 
 @end

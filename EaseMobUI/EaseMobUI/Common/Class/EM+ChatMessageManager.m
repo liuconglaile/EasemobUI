@@ -101,8 +101,7 @@ static EM_ChatMessageManager *detailInstance = nil;
         [self.photoArray addObject:photo];
     }
     [self.photoBrowser setCurrentPhotoIndex:index];
-    UIViewController *rootController = [self.keyWindow rootViewController];
-    [rootController presentViewController:self.photoNavigationController animated:YES completion:nil];
+    [_baseCtrl presentViewController:self.photoNavigationController animated:YES completion:nil];
 }
 
 - (void)showBrowserWithVideoMessage:(EM_ChatMessageModel *)videoMessage{
@@ -116,8 +115,7 @@ static EM_ChatMessageManager *detailInstance = nil;
     }
     video.caption = videoBody.displayName;
     [self.photoArray addObject:video];
-    UIViewController *rootController = [self.keyWindow rootViewController];
-    [rootController presentViewController:self.photoNavigationController animated:YES completion:nil];
+    [_baseCtrl presentViewController:self.photoNavigationController animated:YES completion:nil];
 }
 
 - (void)playVoice:(NSArray *)voiceArray index:(NSInteger)index{    

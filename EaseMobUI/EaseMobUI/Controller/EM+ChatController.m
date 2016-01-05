@@ -241,6 +241,8 @@ EMCDDeviceManagerDelegate>
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     _chatToolBarView.shouldReceiveKeyboardNotification = YES;
+    if ([_delegate respondsToSelector:@selector(loadRootViewController)])
+        [EM_ChatMessageManager defaultManager].baseCtrl = [_delegate loadRootViewController];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{

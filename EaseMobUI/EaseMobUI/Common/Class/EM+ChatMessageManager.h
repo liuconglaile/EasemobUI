@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class EM_ChatMessageModel;
 
 @protocol EM_ChatMessageManagerDelegate;
 
 @interface EM_ChatMessageManager : NSObject
 
+/**
+ *  跳转页面用的Ctrl
+ */
+@property (nonatomic,strong)UIViewController *baseCtrl;
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 @property (nonatomic, weak) id<EM_ChatMessageManagerDelegate> delegate;
 
