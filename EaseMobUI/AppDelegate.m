@@ -19,7 +19,7 @@
 
 #import "UserCustomExtend.h"
 
-#import <EaseMobSDKFull/EaseMob.h>
+#import <EaseMob.h>
 #import <Toast/UIView+Toast.h>
 
 #define EaseMob_AppKey (@"zhliu#app")

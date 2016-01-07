@@ -20,7 +20,7 @@
 #import "UIColor+Hex.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <EaseMobSDKFull/EaseMob.h>
+#import <EaseMob.h>
 #import <FXBlurView/FXBlurView.h>
 #import <CoreTelephony/CTCallCenter.h>
 #import <CoreTelephony/CTCall.h>

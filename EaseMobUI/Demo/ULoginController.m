@@ -11,7 +11,7 @@
 #import <TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <Toast/UIView+Toast.h>
-#import <EaseMobSDKFull/EaseMob.h>
+#import <EaseMob.h>
 
 #define PADDING         (15)
 #define CELL_HEIGHT     (50)

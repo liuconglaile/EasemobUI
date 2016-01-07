@@ -12,7 +12,7 @@
 #import "USettingAvatarItem.h"
 
 #import <RETableViewManager/RETableViewManager.h>
-#import <EaseMobSDKFull/EaseMob.h>
+#import <EaseMob.h>
 
 @interface USettingsController()<UIActionSheetDelegate>
 
