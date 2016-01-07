@@ -20,7 +20,7 @@
 #import "UserCustomExtend.h"
 #import <EaseMob.h>
 
-#import <EaseMobUI/EaseMob.h>
+#import <EaseMobSDKFull/EaseMob.h>
 #import <Toast/UIView+Toast.h>
 //#import <EaseMobSDKFull/EaseMob   .h>
 
