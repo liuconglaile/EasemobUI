@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [EM_ChatUIConfig defaultConfig];
     UIButton *addBuddy = [UIButton buttonWithType:UIButtonTypeCustom];
     addBuddy.titleLabel.font = [UResourceUtils iconFontWithSize:18];
     [addBuddy setTitle:@"\ue600" forState:UIControlStateNormal];
