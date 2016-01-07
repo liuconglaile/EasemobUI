@@ -26,7 +26,7 @@
 #import "EMCDDeviceManager.h"
 
 #import <UIKit/UIKit.h>
-#import <EaseMob.h>
+#import <EaseMobUI/EaseMob.h>
 #import <AVFoundation/AVFoundation.h>
 
 

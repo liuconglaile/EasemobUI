@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 周玉震. All rights reserved.
 //
 
-#import <EaseMob.h>
+#import <EaseMobUI/EaseMob.h>
 #import "EM+ChatMessageExtendBody.h"
 #import "EM+ChatMessageExtend.h"
 #import "EM_ChatMessage.h"

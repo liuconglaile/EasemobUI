@@ -18,9 +18,11 @@
 #import "DDTTYLogger.h"
 
 #import "UserCustomExtend.h"
-
 #import <EaseMob.h>
+
+#import <EaseMobUI/EaseMob.h>
 #import <Toast/UIView+Toast.h>
+//#import <EaseMobSDKFull/EaseMob   .h>
 
 #define EaseMob_AppKey (@"zhliu#app")
 
