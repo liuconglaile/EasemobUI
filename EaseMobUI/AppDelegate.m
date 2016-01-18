@@ -22,7 +22,6 @@
 
 #import <EaseMobSDKFull/EaseMob.h>
 #import <Toast/UIView+Toast.h>
-//#import <EaseMobSDKFull/EaseMob   .h>
 
 #define EaseMob_AppKey (@"zhliu#app")
 

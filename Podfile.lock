@@ -21,7 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - DACircularProgress (2.3.1)
-  - EaseMobSDKFull (2.2.1.2)
+  - EaseMobSDKFull (2.1.7)
   - FXBlurView (1.6.3)
   - JSONModel (1.1.0)
   - JVFloatLabeledTextField (1.1.0)
@@ -57,7 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.x)
-  - EaseMobSDKFull (from `https://github.com/easemob/sdk-ios-cocoapods-integration.git`)
+  - EaseMobSDKFull
   - FXBlurView (= 1.6.3)
   - JSONModel (= 1.1.0)
   - JVFloatLabeledTextField (= 1.1.0)
@@ -75,15 +75,10 @@ DEPENDENCIES:
   - VoiceConvert (from `https://github.com/AwakenDragon/VoiceConvert.git`)
 
 EXTERNAL SOURCES:
-  EaseMobSDKFull:
-    :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
   VoiceConvert:
     :git: https://github.com/AwakenDragon/VoiceConvert.git
 
 CHECKOUT OPTIONS:
-  EaseMobSDKFull:
-    :commit: f27db4da9c6285f91a71811c2d55af8427368dbf
-    :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
   VoiceConvert:
     :commit: cf7b1b953692bf3d1370ff837606eea211f32d7b
     :git: https://github.com/AwakenDragon/VoiceConvert.git
@@ -91,7 +86,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  EaseMobSDKFull: f8d6281b9b58b90d5594fe7d40e1529790035d65
+  EaseMobSDKFull: 43858ca9a62bbe1fa4c7c006f944a3e52a4bff48
   FXBlurView: c6d23f3d35af2c6282296a2930f61c6e2c788d01
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4

@@ -3,8 +3,8 @@ platform :ios, '7.0'
 
 pod 'AFNetworking', '~>2.x'
 #环信
-pod 'EaseMobSDKFull',:git=> 'https://github.com/easemob/sdk-ios-cocoapods-integration.git'
-#pod 'EaseMobSDKFull', :git => '/Users/ZhouYuzhen/Documents/Git/IOS/EaseMobSDKFull'
+#pod 'EaseMobSDKFull' ,:git=> 'https://github.com/easemob/sdk-ios-cocoapods-integration.git'
+pod 'EaseMobSDKFull'
 
 #图片加载
 pod 'SDWebImage','3.7.3'
